@@ -59,7 +59,7 @@ Under the hood, it manages sessions, pages, and browser processes, allowing you 
 - **Browser Tools**: Exposes APIs to quick convert pages to markdown, readability, screenshots, or PDFs.
 
 
-For detailed API documentation and examples, check out our [API reference](https://docs.steel.dev/api-reference) or explore the Swagger UI directly at `http://161.132.50.192:3000/documentation`.
+For detailed API documentation and examples, check out our [API reference](https://docs.steel.dev/api-reference) or explore the Swagger UI directly at `http://161.132.50.192:3164/documentation`.
 
 > Steel is in public beta and evolving every day. Your suggestions, ideas, and reported bugs help us immensely. Do not hesitate to join in the conversation on [Discord](https://discord.gg/steel-dev) or raise a GitHub issue. We read everything, respond to most, and love you.
 
@@ -95,7 +95,7 @@ cd steel-browser
 docker compose up
 ```
 
-This will start the Steel server on port 3000 (http://localhost:3000) and the UI on port 5173 (http://localhost:5173).
+This will start the Steel server on port 3000 (http://localhost:3164) and the UI on port 5173 (http://localhost:5173).
 
 You can now create sessions, scrape pages, take screenshots, and more. Jump to the [Usage](#usage) section for some quick examples on how you can do that.
 
@@ -156,9 +156,9 @@ There are two main ways to interact with the Steel browser API:
 1. [Using Sessions](#sessions)
 2. [Using the Quick Actions Endpoints](#quick-actions-api)
 
-In these examples, we assume your custom Steel API endpoint is `http://localhost:3000`.
+In these examples, we assume your custom Steel API endpoint is `http://localhost:3164`.
 
-The full REST API documentation can be found on your Steel instance at `/documentation` (e.g., `http://localhost:3000/documentation`).
+The full REST API documentation can be found on your Steel instance at `/documentation` (e.g., `http://localhost:3164/documentation`).
 
 #### Using the SDKs
 If you prefer to use the our Python and Node SDKs, you can install the `steel-sdk` package for Node or Python.
@@ -184,7 +184,7 @@ Once you have a session, you can use the session ID or the root URL to interact 
 import Steel from 'steel-sdk';
 
 const client = new Steel({
-  baseUrl: "http://localhost:3000", // Custom API Base URL override
+  baseUrl: "http://localhost:3164", // Custom API Base URL override
 });
 
 (async () => {
@@ -211,7 +211,7 @@ import os
 from steel import Steel
 
 client = Steel(
-    base_url="http://localhost:3000",  # Custom API Base URL override
+    base_url="http://localhost:3164",  # Custom API Base URL override
 )
 
 try:
@@ -232,7 +232,7 @@ except Exception as e:
 
 ```bash
 # Launch a new browser session
-curl -X POST http://localhost:3000/v1/sessions \
+curl -X POST http://localhost:3164/v1/sessions \
   -H "Content-Type: application/json" \
   -d '{
     "options": {
@@ -263,7 +263,7 @@ session = client.sessions.create(is_selenium=True)
 
 ```bash
 # Launch a Selenium session
-curl -X POST http://localhost:3000/v1/sessions \
+curl -X POST http://localhost:3164/v1/sessions \
   -H "Content-Type: application/json" \
   -d '{
     "options": {
@@ -288,7 +288,7 @@ Extract the HTML content of a web page.
 
 ```bash
 # Example using the Actions API
-curl -X POST http://161.132.50.192:3000/v1/scrape \
+curl -X POST http://161.132.50.192:3164/v1/scrape \
   -H "Content-Type: application/json" \
   -d '{
     "url": "https://example.com",
@@ -304,7 +304,7 @@ curl -X POST http://161.132.50.192:3000/v1/scrape \
 Take a screenshot of a web page.
 ```bash
 # Example using the Actions API
-curl -X POST http://161.132.50.192:3000/v1/screenshot \
+curl -X POST http://161.132.50.192:3164/v1/screenshot \
   -H "Content-Type: application/json" \
   -d '{
     "url": "https://example.com",
@@ -320,7 +320,7 @@ curl -X POST http://161.132.50.192:3000/v1/screenshot \
 Download a PDF of a web page.
 ```bash
 # Example using the Actions API
-curl -X POST http://161.132.50.192:3000/v1/pdf \
+curl -X POST http://161.132.50.192:3164/v1/pdf \
   -H "Content-Type: application/json" \
   -d '{
     "url": "https://example.com",

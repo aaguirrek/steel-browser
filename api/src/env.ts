@@ -6,7 +6,7 @@ config();
 const envSchema = z.object({
   HOST: z.string().optional().default("161.132.50.192"),
   DOMAIN: z.string().optional(),
-  PORT: z.string().optional().default("3000"),
+  PORT: z.string().optional().default("3164"),
   CDP_REDIRECT_PORT: z.string().optional().default("9222"),
   PROXY_URL: z.string().optional(),
   DEFAULT_HEADERS: z

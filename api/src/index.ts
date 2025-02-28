@@ -1,8 +1,8 @@
 import buildFastifyServer from "./build-server";
 import { loggingConfig } from "./config";
 
-const HOST = process.env.HOST ?? "161.132.50.192";
-const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
+const HOST =  "161.132.50.192";
+const PORT =  3164;
 
 export const server = buildFastifyServer({
   logger: loggingConfig[process.env.NODE_ENV ?? "production"] ?? true,

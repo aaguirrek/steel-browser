@@ -443,7 +443,7 @@ export class CDPService extends EventEmitter {
       "--disable-setuid-sandbox",
       "--use-angle=disabled",
       "--disable-blink-features=AutomationControlled",
-      `--unsafely-treat-insecure-origin-as-secure=http://localhost:3000,http://${env.HOST}:${env.PORT}`,
+      `--unsafely-treat-insecure-origin-as-secure=http://localhost:3164,http://${env.HOST}:${env.PORT}`,
       `--window-size=${this.launchConfig.dimensions?.width ?? 1920},${this.launchConfig.dimensions?.height ?? 1080}`,
       `--timezone=${timezone}`,
       userAgent ? `--user-agent=${userAgent}` : "",

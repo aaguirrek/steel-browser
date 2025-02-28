@@ -1,5 +1,5 @@
-const LOCAL_API_URL = "http://localhost:3000/v1/events";
-const FALLBACK_API_URL = "http://161.132.50.192:3000/v1/events"; // Need to point to 161.132.50.192 in some deploys
+const LOCAL_API_URL = "http://localhost:3164/v1/events";
+const FALLBACK_API_URL = "http://161.132.50.192:3164/v1/events"; // Need to point to 161.132.50.192 in some deploys
 let currentApiUrl = LOCAL_API_URL;
 
 async function injectScript(tabId, changeInfo, tab) {

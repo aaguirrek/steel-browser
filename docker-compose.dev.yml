@@ -7,7 +7,7 @@ services:
       args:
         NODE_VERSION: 22.13.0
     ports:
-      - "3164:3000"
+      - "3164:3164"
       - "9223:9223"
     volumes:
       - ./.cache:/app/.cache
@@ -19,15 +19,15 @@ services:
       context: .
       dockerfile: ./ui/Dockerfile
       args:
-        VITE_API_URL: ${VITE_API_URL:-http://localhost:3000}
-        VITE_WS_URL: ${VITE_WS_URL:-ws://localhost:3000}
-        VITE_OPENAPI_URL: ${VITE_OPENAPI_URL:-http://localhost:3000/documentation/json}
+        VITE_API_URL: ${VITE_API_URL:-http://localhost:3164}
+        VITE_WS_URL: ${VITE_WS_URL:-ws://localhost:3164}
+        VITE_OPENAPI_URL: ${VITE_OPENAPI_URL:-http://localhost:3164/documentation/json}
     ports:
       - "5173"
     environment:
-      - VITE_API_URL=${VITE_API_URL:-http://localhost:3000}
-      - VITE_WS_URL=${VITE_WS_URL:-ws://localhost:3000}
-      - VITE_OPENAPI_URL=${VITE_OPENAPI_URL:-http://localhost:3000/documentation/json}
+      - VITE_API_URL=${VITE_API_URL:-http://localhost:3164}
+      - VITE_WS_URL=${VITE_WS_URL:-ws://localhost:3164}
+      - VITE_OPENAPI_URL=${VITE_OPENAPI_URL:-http://localhost:3164/documentation/json}
     depends_on:
       - api
     networks:

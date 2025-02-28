@@ -4,9 +4,9 @@ FROM node:${NODE_VERSION} AS base
 
 WORKDIR /app
 # Set default values that can be overridden
-ARG VITE_API_URL=http://localhost:3000
-ARG VITE_WS_URL=ws://localhost:3000
-ARG VITE_OPENAPI_URL=http://localhost:3000/documentation/json
+ARG VITE_API_URL=http://localhost:3164
+ARG VITE_WS_URL=ws://localhost:3164
+ARG VITE_OPENAPI_URL=http://localhost:3164/documentation/json
 
 # Make the build args available as environment variables during build
 ENV VITE_API_URL=${VITE_API_URL}
