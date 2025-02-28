@@ -44,7 +44,7 @@ export DISPLAY=:10
 
 # Set the CDP_REDIRECT_PORT environment variable
 export CDP_REDIRECT_PORT=9223
-export HOST=0.0.0.0
+export HOST=161.132.50.192
 
 # Run the `npm run start` command but without npm.
 # NPM will introduce its own signal handling

@@ -59,7 +59,7 @@ Under the hood, it manages sessions, pages, and browser processes, allowing you 
 - **Browser Tools**: Exposes APIs to quick convert pages to markdown, readability, screenshots, or PDFs.
 
 
-For detailed API documentation and examples, check out our [API reference](https://docs.steel.dev/api-reference) or explore the Swagger UI directly at `http://0.0.0.0:3000/documentation`.
+For detailed API documentation and examples, check out our [API reference](https://docs.steel.dev/api-reference) or explore the Swagger UI directly at `http://161.132.50.192:3000/documentation`.
 
 > Steel is in public beta and evolving every day. Your suggestions, ideas, and reported bugs help us immensely. Do not hesitate to join in the conversation on [Discord](https://discord.gg/steel-dev) or raise a GitHub issue. We read everything, respond to most, and love you.
 
@@ -288,7 +288,7 @@ Extract the HTML content of a web page.
 
 ```bash
 # Example using the Actions API
-curl -X POST http://0.0.0.0:3000/v1/scrape \
+curl -X POST http://161.132.50.192:3000/v1/scrape \
   -H "Content-Type: application/json" \
   -d '{
     "url": "https://example.com",
@@ -304,7 +304,7 @@ curl -X POST http://0.0.0.0:3000/v1/scrape \
 Take a screenshot of a web page.
 ```bash
 # Example using the Actions API
-curl -X POST http://0.0.0.0:3000/v1/screenshot \
+curl -X POST http://161.132.50.192:3000/v1/screenshot \
   -H "Content-Type: application/json" \
   -d '{
     "url": "https://example.com",
@@ -320,7 +320,7 @@ curl -X POST http://0.0.0.0:3000/v1/screenshot \
 Download a PDF of a web page.
 ```bash
 # Example using the Actions API
-curl -X POST http://0.0.0.0:3000/v1/pdf \
+curl -X POST http://161.132.50.192:3000/v1/pdf \
   -H "Content-Type: application/json" \
   -d '{
     "url": "https://example.com",
